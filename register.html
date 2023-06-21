@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Netflix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="root" style="display: flex; flex-direction: column;">
+    <div style="display: flex; flex-direction: row; margin: auto; align-items: center; padding-top: 2%; padding-bottom: 2%; width: 100%; justify-content: center; background-color: rgba(0, 0, 0, 0.7);">
+      <img src="/images/logo.png" alt="Logo" draggable="false" style="width: 95px; margin-right: 95px; user-select: none;"/>
+      <nav>
+        <a href="index.html" style="text-decoration: none; color: red; margin-right: 10px; user-select: none; outline: none;">Home</a>
+        <a href="login.html" style="text-decoration: none; color: red; margin-right: 10px; user-select: none; outline: none;">Login</a>
+        <a href="register.html" style="text-decoration: none; color: red; margin-right: 10px; user-select: none; outline: none;">Register</a>
+        <a href="movies.html" style="text-decoration: none; color: red; user-select: none; outline: none;">Movies</a>
+      </nav>
+    </div>
+    <div style="display: flex; flex-direction: column; flex: 1;">
+      <div style="margin: auto;">
+        <h2 style="margin-bottom: 20px; color: white; text-align: center;">Register</h2>
+        <form style="display: flex; flex-direction: column; align-items: center;">
+          <input type="text" placeholder=" Email" pattern="^[a-zA-Z0-9.]+@[a-z]+\.[a-z]{2,}$" required style="width: 250px; padding: 10px; margin-bottom: 10px; font-family: 'Space Mono', monospace; background-color: white; border: none; border-radius: 5px; outline: none;">
+          <input type="text" placeholder=" Username" pattern="[a-zA-Z0-9]+" required style="width: 250px; padding: 10px; margin-bottom: 10px; font-family: 'Space Mono', monospace; background-color: white; border: none; border-radius: 5px; outline: none;">
+          <input type="password" placeholder=" Password" pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$" required style="width: 250px; padding: 10px; margin-bottom: 10px; font-family: 'Space Mono', monospace; background-color: white; border: none; border-radius: 5px; outline: none;">
+          <div>
+              <label for="country" style="color: white;">I live in</label>
+              <select id="country" style="padding-left: 5px; margin-bottom: 10px; background-color: white; border: none; border-radius: 5px; font-family: 'Space Mono', monospace; width: 100px; appearance: none;">
+                  <option value=""></option>
+                  <option value="UK">UK</option>
+                  <option value="Japan">Japan</option>
+                  <option value="South Korea">South Korea</option>
+              </select>
+          </div>
+          <button type="submit" style="width: 120px; padding: 10px; background-color: red; color: white; border: none; cursor: pointer;  font-family: 'Space Mono', monospace; border-radius: 5px; margin-top: 20px; user-select: none;">Register</button>
+        </form>
+      </div>
+    </div> 
+  </div>
+  <style>
+    button:focus {
+        outline: 2px solid white;
+    }
+  </style>
+  <script>
+    const anchorElements = document.getElementsByTagName('a');
+    for (let i = 0; i < anchorElements.length; i++) {
+      anchorElements[i].onclick = e => {
+        if (window.location.pathname === '/' + e.target.getAttribute('href')) {
+          e.preventDefault();
+          e.target.blur();
+        }
+      };
+    }
+  </script>
+</body>
+</html>

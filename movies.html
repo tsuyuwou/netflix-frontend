@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Netflix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="root" style="display: flex; flex-direction: column;">
+    <div style="display: flex; flex-direction: row; margin: auto; align-items: center; padding-top: 2%; padding-bottom: 2%; width: 100%; justify-content: center; background-color: rgba(0, 0, 0, 0.7);">
+      <img src="/images/logo.png" alt="Logo" draggable="false" style="width: 95px; margin-right: 95px; user-select: none;"/>
+      <nav style="cursor: default;">
+        <a href="index.html" style="text-decoration: none; color: red; margin-right: 10px; user-select: none; outline: none;">Home</a>
+        <a href="login.html" style="text-decoration: none; color: red; margin-right: 10px; user-select: none; outline: none;">Login</a>
+        <a href="register.html" style="text-decoration: none; color: red; margin-right: 10px; user-select: none; outline: none;">Register</a>
+        <a href="movies.html" style="text-decoration: none; color: red; user-select: none; outline: none;">Movies</a>
+      </nav>
+    </div>
+    <div id="catalog" style="overflow-x: scroll; flex: 1; display: flex;">
+      <div style="margin: auto;">
+        <table style="color: white;">
+          <tbody>
+            <tr id="titles"></tr>
+            <tr id="trailers"></tr>
+          </tbody>
+        </table>  
+      </div>        
+    </div>
+  </div>
+  <style>
+    td {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+
+    #titles td {
+      padding-bottom: 50px;
+      text-align: center;
+    }
+
+    #catalog::-webkit-scrollbar {
+      display: none;
+    }
+
+    .screen {
+      background-color:  rgba(0, 0, 0, 0.7);
+    }
+
+    .screen:hover {
+      background-color:  rgba(0, 0, 0, 0.9);
+    }
+
+    .screen > div {
+      opacity: 0;
+    }
+
+    .screen:hover > div {
+      opacity: 1;
+    }
+  </style>
+  <script src="movies.js"></script>
+</body>
+</html>

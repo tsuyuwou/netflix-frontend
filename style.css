@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono');
+
+body {
+    margin: 0;
+    min-width: 600px;
+    min-height: max(100vh, 971px);
+    font-family: "Space Mono";
+    background-image: url(/images/movies.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    background-color: black;
+}
+
+#root {
+    background-color: rgba(0, 0, 0, 0.8);
+    min-height: max(100vh, 971px);
+}
+
+::selection {
+    color: red;
+}
+
+a:hover,
+a:focus {
+    color: white !important;
+}
